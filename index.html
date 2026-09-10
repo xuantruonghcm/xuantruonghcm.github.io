@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Soroban cua Teo</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="container">
+            <!--header>DAY LA CHUONG TRINH DAU TIEN</header-->
+            <div class="main-content">
+                <aside>
+                    <div>
+                        <fieldset class="custom-group-box-info">
+                            <legend>CẤU HÌNH HỆ THỐNG</legend>
+                            <fieldset class="custom-group-box-info">
+                                <legend>Thông tin học viên</legend>
+                                <label>
+                                    <span id="name" class="span-name-info"
+                                        >Quang Huy Nguyễn - Lớp: 8/5</span
+                                    >
+                                </label>
+                            </fieldset>
+
+                            <fieldset
+                                class="custom-group-box-info"
+                                id="thoiGian_grp"
+                            >
+                                <legend>Thời gian</legend>
+                                <div>
+                                    <form
+                                        oninput="
+                                            outputVal.value = tmrAoTinh.value
+                                        "
+                                        id="frmAoTinh_Tmr"
+                                        name="AoTinh_Tmr"
+                                    >
+                                        <label for="tmrAoTinh"
+                                            >Ảo tính:
+                                            <input
+                                                name="tmrAoTinh"
+                                                type="number"
+                                                min="0.1"
+                                                max="10"
+                                                step="0.1"
+                                                value="0.5"
+                                            />
+                                            <span>(giây)</span>
+                                        </label>
+                                    </form>
+                                    <form
+                                        oninput="
+                                            outputVal.value = tmrTraLoi.value
+                                        "
+                                        id="frmTraLoi_Tmr"
+                                        name="TraLoi_Tmr"
+                                    >
+                                        <label for="tmrTraLoi"
+                                            >Trả lời:
+                                            <input
+                                                name="tmrTraLoi"
+                                                type="number"
+                                                min="0.1"
+                                                max="10"
+                                                step="0.1"
+                                                value="0.5"
+                                            />
+                                            <span>(giây)</span>
+                                        </label>
+                                    </form>
+                                </div>
+                            </fieldset>
+
+                            <fieldset
+                                class="custom-group-box-info"
+                                id="soLuong_grp"
+                            >
+                                <legend>Số lượng</legend>
+                                <div>
+                                    <form
+                                        oninput="
+                                            outputVal.value = soPhepTinh.value
+                                        "
+                                        id="frmSoPhepTinh"
+                                        name="SoPhepTinh"
+                                    >
+                                        <label for="soPhepTinh"
+                                            >Phép tính:
+                                            <input
+                                                name="soPhepTinh"
+                                                type="number"
+                                                min="5"
+                                                max="100"
+                                                step="1"
+                                                value="5"
+                                            />
+                                            <span>/ 1 Câu</span>
+                                        </label>
+                                    </form>
+                                    <form
+                                        oninput="
+                                            outputVal.value = soCauHoi.value
+                                        "
+                                        id="frmSoCauHoi"
+                                        name="SoCauHoi"
+                                    >
+                                        <label for="soCauHoi"
+                                            >Số câu:
+                                            <input
+                                                name="soCauHoi"
+                                                type="number"
+                                                min="5"
+                                                max="100"
+                                                step="1"
+                                                value="10"
+                                            />
+                                            <span>/ 1 Bài</span>
+                                        </label>
+                                    </form>
+                                </div>
+                            </fieldset>
+
+                            <fieldset
+                                class="custom-group-box-info"
+                                id="soHoc_grp"
+                            >
+                                <legend>Cấp độ số học</legend>
+                                <div>
+                                    <form id="frmLevel">
+                                        <label class="custom-radio">
+                                            <input
+                                                type="radio"
+                                                name="Level"
+                                                value="LevelOne"
+                                                checked
+                                            />
+                                            <span class="dot"></span>
+                                            1 chữ số (-9 ~ 9)
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input
+                                                type="radio"
+                                                name="Level"
+                                                value="LevelTwo"
+                                            />
+                                            <span class="dot"></span>
+                                            2 chữ số (-99 ~ 99)
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input
+                                                type="radio"
+                                                name="Level"
+                                                value="LevelThree"
+                                            />
+                                            <span class="dot"></span>
+                                            3 chữ số (-999 ~ 999)
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input
+                                                type="radio"
+                                                name="Level"
+                                                value="LevelFour"
+                                            />
+                                            <span class="dot"></span>
+                                            4 chữ số (-9999 ~ 9999)
+                                        </label>
+                                    </form>
+                                </div>
+                            </fieldset>
+
+                            <fieldset
+                                class="custom-group-box-info"
+                                id="Range_grp"
+                            >
+                                <legend>Từ số ~ đến số</legend>
+                                <div>
+                                    <form
+                                        oninput="outputVal.value = minVal.value"
+                                        id="frmMinValue"
+                                        name="minValue"
+                                    >
+                                        <label for="minVal"
+                                            >Min:
+                                            <input
+                                                name="minVal"
+                                                type="number"
+                                                min="-9"
+                                                max="0"
+                                                step="1"
+                                                value="0"
+                                            />
+                                        </label>
+                                    </form>
+                                    <form
+                                        oninput="outputVal.value = maxVal.value"
+                                        id="frmMaxValue"
+                                        name="maxValue"
+                                    >
+                                        <label for="maxVal"
+                                            >Max:
+                                            <input
+                                                name="maxVal"
+                                                type="number"
+                                                min="9"
+                                                max="99"
+                                                step="1"
+                                                value="9"
+                                            />
+                                        </label>
+                                    </form>
+                                </div>
+                            </fieldset>
+                        </fieldset>
+                    </div>
+                </aside>
+                <main>
+                    <div class="master-div-container">
+                        <div id="lblContent" class="span-top child-div-top">
+                            <img
+                                id="correctIcon"
+                                src="img/img_4.jfif"
+                                style="
+                                    visibility: visible;
+                                    width: 300px;
+                                    height: 300px;
+                                "
+                            />
+                            <!--img
+                                id="wrongIcon"
+                                src="img/img_4a.jfif"
+                                style="visibility: hidden"
+                            /-->
+                        </div>
+                        <div class="child-div-bottom-container">
+                            <div
+                                id="lblDetail"
+                                class="span-bottom child-div-top"
+                            >
+                                10+20+30-10
+                            </div>
+
+                            <div class="span-bottom child-div-bottom">
+                                <input id="txtResult" />
+                                <button id="btnNext">Tiếp tục</button>
+                                <button id="btnCancel">Bỏ qua</button>
+                                <button id="btnHide">>></button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <aside>
+                    <div>
+                        <fieldset class="custom-group-box-info">
+                            <legend>CẤU HÌNH HỆ THỐNG</legend>
+                            <fieldset
+                                class="custom-group-box-info"
+                                id="Level_grp"
+                            >
+                                <legend>Loại phép tính</legend>
+                                <div>
+                                    <form id="frmOperator">
+                                        <label class="custom-radio">
+                                            <input
+                                                type="radio"
+                                                name="OperatorType"
+                                                value="Addition"
+                                                disabled="true"
+                                            />
+                                            <span class="dot"></span>
+                                            Phép cộng (+)
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input
+                                                type="radio"
+                                                name="OperatorType"
+                                                value="Subtraction"
+                                                disabled="true"
+                                            />
+                                            <span class="dot"></span>
+                                            Phép trừ (-)
+                                        </label>
+                                        <label class="custom-radio">
+                                            <input
+                                                type="radio"
+                                                name="OperatorType"
+                                                value="Both"
+                                                checked
+                                            />
+                                            <span class="dot"></span>
+                                            Hỗn hợp cộng trừ (+,-)
+                                        </label>
+                                    </form>
+                                </div>
+                            </fieldset>
+                        </fieldset>
+                    </div>
+                    <br />
+                    <div>
+                        <fieldset class="custom-group-box-result">
+                            <legend>THÔNG TIN KẾT QUẢ</legend>
+                            <fieldset class="custom-group-box-result">
+                                <legend>Tiến trình</legend>
+                                <table>
+                                    <tr>
+                                        <td
+                                            style="
+                                                padding-bottom: 5px;
+                                                padding-right: 5px;
+                                                padding-left: 5px;
+                                            "
+                                        >
+                                            Họ và tên:
+                                        </td>
+                                        <td
+                                            style="
+                                                padding-bottom: 5px;
+                                                padding-right: 5px;
+                                                padding-left: 5px;
+                                            "
+                                        >
+                                            Quang Huy
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px">
+                                            Ngày làm bài:
+                                        </td>
+                                        <td style="padding: 5px">
+                                            <span id="lblNgayLamBai"
+                                                >15/06/2026</span
+                                            >
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px">
+                                            Tổng số câu:
+                                        </td>
+                                        <td style="padding: 5px">
+                                            <span id="lblTongSoCauHoi"
+                                                >0.0</span
+                                            >
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px">
+                                            Đang làm câu:
+                                        </td>
+                                        <td style="padding: 5px">
+                                            <span id="lblCauHienTai">0.0</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                            <fieldset class="custom-group-box-result">
+                                <legend>Kết quả</legend>
+                                <table>
+                                    <tr>
+                                        <td
+                                            style="
+                                                padding-bottom: 5px;
+                                                padding-right: 5px;
+                                                padding-left: 5px;
+                                            "
+                                        >
+                                            <span class="span-label"
+                                                >Số câu đúng:</span
+                                            >
+                                        </td>
+                                        <td
+                                            style="
+                                                padding-bottom: 5px;
+                                                padding-right: 5px;
+                                                padding-left: 5px;
+                                            "
+                                        >
+                                            <span id="lblSoCauDung">0.0</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px">
+                                            <span class="span-label"
+                                                >Số câu sai:</span
+                                            >
+                                        </td>
+                                        <td style="padding: 5px">
+                                            <span id="lblSoCauSai">0.0</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px">
+                                            <span class="span-label"
+                                                >Số câu bỏ qua:</span
+                                            >
+                                        </td>
+                                        <td style="padding: 5px">
+                                            <span id="lblSoCauBoQua">0.0</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                        </fieldset>
+                    </div>
+                    <div>
+                        <button id="btnStart">Bắt đầu</button>
+                        <button id="btnStop">Kết thúc</button>
+                    </div>
+                </aside>
+            </div>
+            <footer>
+                <div class="info-copyright" style="text-align: right">
+                    Soroban và Ảo tính - V.1.23
+                </div>
+            </footer>
+        </div>
+        <script type="text/javascript" src="src/script.js"></script>
+        <script>
+            let aotinhTmr;
+            let traloiTmr;
+            let iSophepTinh;
+            let iSoCau;
+            let strCapdo;
+            let iMin, iMax;
+            let strLoaiPhepTinh;
+            let dateNgayKT;
+            let myTest;
+
+            document.getElementById('btnStart').onclick = function () {
+                alert('Begin Start button!');
+                aotinhTmr = parseFloat(
+                    document.forms['frmAoTinh_Tmr'].tmrAoTinh.value,
+                );
+                traloiTmr = parseFloat(
+                    document.forms['frmTraLoi_Tmr'].tmrTraLoi.value,
+                );
+                iSophepTinh = parseInt(
+                    document.forms['frmSoPhepTinh'].soPhepTinh.value,
+                    10,
+                );
+                iSoCau = parseInt(
+                    document.forms['frmSoCauHoi'].soCauHoi.value,
+                    10,
+                );
+
+                iMin = parseInt(document.forms['frmMinValue'].minVal.value, 10);
+                iMax = parseInt(document.forms['frmMaxValue'].maxVal.value, 10);
+
+                myTest = new Operations({
+                    userName: 'Quang Huy Nguyễn',
+                    testDate: new Date().toDate,
+                    iLengthOfOperation: iSophepTinh,
+                    iNumOfOperations: iSoCau,
+                    timeAllowed: aotinhTmr,
+                    timeElapsed: traloiTmr,
+                    iRangeValue: [iMin, iMax],
+                    iLists: [],
+                });
+                myTest.initialize();
+                //alert(myTest.iLists[0]);
+                disableAllCtrl(true);
+                document.getElementById('txtResult').focus();
+                document.getElementById('lblContent').innerHTML = 'READY!';
+                document.getElementById('correctIcon').style.display = 'none';
+                //myTest.iLists[myTest.iShowIdx].convertToText('#');
+
+                //alert('End Start button!');
+                //myTest.show();
+            };
+
+            document.getElementById('btnStop').onclick = function () {
+                //alert('Ready!');
+                document.getElementById('lblDetail').style.display = 'none';
+                document.getElementById('lblContent').style.height = '100%';
+                //show();
+            };
+
+            function disableAllCtrl(isDisable) {
+                document.getElementById('thoiGian_grp').disabled = isDisable;
+                document.getElementById('soLuong_grp').disabled = isDisable;
+                document.getElementById('soHoc_grp').disabled = isDisable;
+                document.getElementById('Range_grp').disabled = isDisable;
+                document.getElementById('Level_grp').disabled = isDisable;
+            }
+
+            /*function show() {
+                //myTest.iLists[idx].show();
+                //alert('Begin Show!');
+                document.getElementById('lblDetail').innerHTML =
+                    myTest.iLists[myTest.iShowIdx].convertToText(' ');
+                myTest.iShowIdx++;
+                myTest.show();
+                //alert('End Show!');
+            }*/
+        </script>
+        <script>
+            let bShow = false;
+            if (!bShow) {
+                document.getElementById('lblDetail').style.display = 'none';
+                document.getElementById('lblContent').style.height = '100%';
+            }
+            document.getElementById('btnHide').onclick = function () {
+                bShow = !bShow;
+                if (!bShow) {
+                    document.getElementById('lblDetail').style.display = 'none';
+                    document.getElementById('lblContent').style.height = '100%';
+                } else {
+                    document.getElementById('lblDetail').style.display =
+                        'block';
+                    document.getElementById('lblContent').style.height = '70%';
+                }
+            };
+        </script>
+        <script>
+            const txtResult = document.getElementById('txtResult');
+
+            txtResult.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter') {
+                    // Thực hiện hành động của bạn tại đây
+                    //alert('Next! Result: ' + txtResult.value);
+                    txtResult.focus();
+
+                    if (Operations.iShowIdx < myTest.iNumOfOperations) {
+                        Operations.iShowIdx++;
+                        Operations.show(
+                            myTest,
+                            document.getElementById('lblContent'),
+                        );
+                        //alert('Nhap ket qua!');
+                    } else {
+                        Operations.iShowIdx = 0;
+                    }
+                }
+            });
+        </script>
+        <script>
+            document.getElementById('btnNext').onclick = function () {
+                txtResult.focus();
+                if (Operations.iShowIdx < myTest.iNumOfOperations) {
+                    Operations.iShowIdx++;
+                    Operations.show(
+                        myTest,
+                        document.getElementById('lblContent'),
+                    );
+                    alert('myTest=' + myTest.iLists);
+                    /*let result = parseInt(document.getElementById('txtResult'));
+                    myTest.iLists[Operations.iShowIdx].iAnswer = result;
+                    if (myTest.iLists[Operations.iShowIdx].isCorrect()) {
+                        document.getElementById('correctIcon').style.display =
+                            'none';
+                        document.getElementById('correctIcon').src =
+                            'img/img_3.jfif';
+                    } else {
+                        document.getElementById('correctIcon').style.display =
+                            'none';
+                        document.getElementById('correctIcon').src =
+                            'img/img_2.jfif';
+                    }
+                    document.getElementById('lblContent').innerHTML =
+                        myTest.iLists[Operations.iShowIdx].iAnswer;
+
+                    //alert('Nhap ket qua!');*/
+                } else {
+                    //Cham diem va hien ket qua
+                    Operations.iShowIdx = 0;
+                }
+            };
+        </script>
+        <script>
+            // Lấy tất cả các radio button có name là 'gender'
+            const levelRadios = document.querySelectorAll(
+                'input[name="Level"]',
+            );
+
+            // Lặp qua từng radio button để gán sự kiện
+            levelRadios.forEach((levelRadio) => {
+                levelRadio.addEventListener('change', function () {
+                    // Kiểm tra xem radio button này có đang được chọn không
+                    switch (this.value) {
+                        case 'LevelOne':
+                            document.forms['frmMinValue'].minVal.min = -9;
+                            document.forms['frmMinValue'].minVal.max = 0;
+                            document.forms['frmMinValue'].minVal.value = -9;
+
+                            document.forms['frmMaxValue'].maxVal.min = 0;
+                            document.forms['frmMaxValue'].maxVal.max = 9;
+                            document.forms['frmMaxValue'].maxVal.value = 9;
+                            break;
+                        case 'LevelTwo':
+                            document.forms['frmMinValue'].minVal.min = -99;
+                            document.forms['frmMinValue'].minVal.max = 0;
+                            document.forms['frmMinValue'].minVal.value = -99;
+
+                            document.forms['frmMaxValue'].maxVal.min = 0;
+                            document.forms['frmMaxValue'].maxVal.max = 99;
+                            document.forms['frmMaxValue'].maxVal.value = 99;
+                            break;
+                        case 'LevelThree':
+                            document.forms['frmMinValue'].minVal.min = -999;
+                            document.forms['frmMinValue'].minVal.max = 0;
+                            document.forms['frmMinValue'].minVal.value = -999;
+
+                            document.forms['frmMaxValue'].maxVal.min = 0;
+                            document.forms['frmMaxValue'].maxVal.max = 999;
+                            document.forms['frmMaxValue'].maxVal.value = 999;
+                            break;
+                        case 'LevelFour':
+                            document.forms['frmMinValue'].minVal.min = -9999;
+                            document.forms['frmMinValue'].minVal.max = 0;
+                            document.forms['frmMinValue'].minVal.value = -9999;
+
+                            document.forms['frmMaxValue'].maxVal.min = 0;
+                            document.forms['frmMaxValue'].maxVal.max = 9999;
+                            document.forms['frmMaxValue'].maxVal.value = 9999;
+                            break;
+                        default:
+                            break;
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
