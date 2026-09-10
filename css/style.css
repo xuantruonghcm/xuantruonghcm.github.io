@@ -1,0 +1,272 @@
+/*GROUP-BOX STYLES*/
+.custom-group-box-info {
+    border: 2px solid #007bff; /* Màu viền */
+    border-radius: 8px; /* Bo góc */
+    padding: 15px; /* Khoảng cách bên trong 20px*/
+    /*background-color: #f9f9f9;  Màu nền */
+    width: 100%; /* Độ rộng hộp */
+    font-family: Arial, sans-serif;
+}
+
+.custom-group-box-info legend {
+    color: #007bff; /* Màu chữ tiêu đề */
+    font-weight: bold;
+    padding: 0 10px; /* Khoảng cách chữ với viền */
+}
+
+.custom-group-box-info label {
+    display: block; /* Hiển thị xuống dòng */
+    margin-bottom: 10px;
+}
+
+.custom-group-box-result {
+    border: 2px solid #ff0000; /* Màu viền */
+    border-radius: 8px; /* Bo góc */
+    padding: 15px; /* Khoảng cách bên trong 20px*/
+    /*background-color: #b0f879; /* Màu nền */
+    width: 100%; /* Độ rộng hộp */
+    font-family: Arial, sans-serif;
+}
+
+.custom-group-box-result legend {
+    color: #ff0000; /* Màu chữ tiêu đề */
+    font-weight: bold;
+    padding: 0 10px; /* Khoảng cách chữ với viền */
+}
+
+.custom-group-box-result label {
+    display: block; /* Hiển thị xuống dòng */
+    margin-bottom: 10px;
+}
+
+/*TREE VIEW STYLE*/
+/* Xóa các chấm mặc định của danh sách */
+.tree-view,
+.tree-view ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Thụt lùi các cấp thư mục con */
+.tree-view ul {
+    margin-left: 15px;
+    border-left: 1px dashed #ccc;
+    padding-left: 15px;
+}
+
+/* Định dạng các nút */
+.tree-view li {
+    margin: 5px 0;
+    position: relative;
+}
+
+/* Ẩn mũi tên mặc định của thẻ details */
+.tree-view summary::-webkit-details-marker {
+    display: none;
+}
+.tree-view summary {
+    list-style: none; /* Ẩn mũi tên trên Firefox */
+    cursor: pointer;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Thêm biểu tượng thư mục / file đơn giản */
+.tree-view summary::before {
+    /*content: '📁 ';*/
+    content: '▶'; /* Unicode arrow */
+    margin-right: 5px;
+}
+
+.tree-view details:not([open]) > summary::before {
+    content: '📁 '; /* Thay đổi icon khi đóng thư mục nếu muốn */
+}
+
+.tree-view li:not(:has(details)) > summary::before {
+    content: '📄 '; /* Icon cho file cuối cùng */
+}
+
+/* GLOBLE STYLES */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /*grid-template-rows: auto 1fr auto; /* Header tự động, Main lấp đầy, Footer tự động */
+    /*grid-template-columns: 3fr 1fr; /* 2 cột: phần chính và sidebar */
+    /*min-height: 100vh;*/
+    min-height: 100vh; /* Đảm bảo chiều cao tối thiểu bằng chiều cao màn hình */
+}
+
+header {
+    grid-row: 1;
+    grid-column: 1 / -1; /* Trải dài toàn bộ chiều rộng */
+}
+
+main {
+    grid-row: 2;
+    grid-column: 1;
+}
+
+aside {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+footer {
+    grid-row: 3;
+    grid-column: 1 / -1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    width: 200px;
+    height: 100px;
+}
+
+header,
+footer {
+    background: #333;
+    color: white;
+    padding: 10px;
+}
+
+.main-content {
+    display: flex;
+    flex: 1; /* Chiếm phần không gian còn lại */
+}
+
+main {
+    flex: 3; /* Chiếm 3 phần chiều rộng */
+    /*background: #f4f4f4;*/
+    padding: 10px; /*20px*/
+}
+
+aside {
+    flex: 1; /* Chiếm 1 phần chiều rộng */
+    /*background: #ddd;*/
+    padding: 10px;
+}
+
+/*TABLE STYLES*/
+.table-class {
+    padding: 10px;
+}
+.row-class {
+    font-size: medium;
+    font-style: italic;
+    text-align: center;
+}
+.col-class {
+    text-align: center;
+}
+
+/*TEXT STYLES*/
+.num {
+    font-size: larger;
+    font-weight: 300;
+}
+.span-top {
+    /*font-size: 1500%;*/
+    font-size: clamp(1500%, 4vw, 3rem);
+    font-weight: bold;
+    color: #f00;
+    font-family: 'Arial', Tahoma, Geneva, Verdana, sans-serif;
+    /*border: 5px solid red;*/
+}
+.span-bottom {
+    /*font-size: 50px;*/
+    /*font-size: clamp(1.5rem, 4vw, 3rem);*/
+    font-weight: bold;
+    color: red;
+    /*border: 1px solid rgb(0, 255, 140);*/
+    font-family: 'Arial', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*DIV CONTENT*/
+/* Các kiểu CSS khác */
+.master-div-container {
+    position: relative; /* Tạo không gian định vị cho thẻ con */
+    display: flex;
+    /*justify-content: center; /* Căn giữa theo chiều ngang */
+    /*align-items: bottom; /* Căn giữa theo chiều dọc */
+    height: 100%; /* Chiều cao bằng 100% màn hình */
+    width: 100%; /* 100% chiều rộng màn hình */
+    flex-direction: column; /* Sắp xếp các phần tử con theo cột */
+    /*border: 1px solid rgb(255, 0, 0);*/
+}
+
+.child-div-top {
+    position: absolute;
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 70%; /* Chiều cao bằng 100% màn hình */
+    width: 100%; /* 100% chiều rộng màn hình */
+    top: 0;
+    left: 0;
+    /*border: 30px solid red;*/
+    flex: 1;
+}
+
+.child-div-bottom {
+    position: absolute;
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 30%; /* Chiều cao bằng 100% màn hình */
+    width: 100%; /* 100% chiều rộng màn hình */
+    right: 0;
+    bottom: 0;
+    border: 2px solid #007bff;
+    flex: 1;
+    border-radius: 8px;
+}
+
+.child-div-bottom-container {
+    position: absolute;
+    display: flex;
+    height: 30%; /* Chiều cao bằng 100% màn hình */
+    width: 100%; /* 100% chiều rộng màn hình */
+    right: 0;
+    bottom: 0;
+
+    /*border: 1px solid #000000;*/
+    flex: 1;
+}
+
+/*RADIO*/
+/* Ẩn nút radio mặc định của trình duyệt */
+.custom-radio input {
+    display: none;
+}
+
+/* Tạo nút radio tùy chỉnh */
+.custom-radio .dot {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    vertical-align: middle;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+/* Hiển thị dấu chấm xanh khi được chọn */
+.custom-radio input:checked + .dot {
+    background-color: #007bff;
+    border: 2px solid #007bff;
+    box-shadow: inset 0 0 0 3px #fff;
+}
